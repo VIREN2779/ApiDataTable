@@ -1,0 +1,30 @@
+.todos-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .todos-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .todos-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .todos-table th,
+  .todos-table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .todos-table th {
+    background-color:silver ;
+  }
+  
+ 
+  
+
+  
