@@ -3,11 +3,22 @@ import '../components/TodosTable.css';
 
 export default function TodosTable() {
     const[todos , setTodos] = useState([]);
+    const fetchTodos = async () => {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setTodos(data);
+        } catch (error) {
+            console.error('Error fetching todos:', error);
+        }
+    };
+
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(response => response.json())
-        .then(data => setTodos(data))
-    })
+        fetchTodos();
+    }, []);
   return (
     <div className='todos-container'>
         <div className='todos-heading'>Todos</div>
